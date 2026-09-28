@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="Yushu Fan is a Data Science and Mathematics student at the University of Chicago working on experimentation, machine learning, and useful data products.">
+  <meta property="og:title" content="Yushu Fan — Data Science & Mathematics">
+  <meta property="og:description" content="Experiments, models, and data products that help people make better decisions.">
+  <meta property="og:type" content="website">
+  <title>Yushu Fan — Data Science & Mathematics</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b3737'/%3E%3Ctext x='32' y='44' fill='%23f7f5f0' font-family='Arial' font-size='30' font-weight='700' text-anchor='middle'%3EYF%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --paper:#f7f5f0; --white:#fffefa; --ink:#173130; --muted:#5c6d69; --line:#d8dcd3; --accent:#be593c; --mint:#dce9df; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.62 "DM Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible { outline:3px solid var(--accent); outline-offset:5px; border-radius:3px; }
+    .wrap { max-width:1180px; margin:auto; padding:0 48px; }
+    .topbar { height:86px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .wordmark { font:800 18px/1 "Manrope",sans-serif; letter-spacing:-.055em; }
+    .wordmark span { color:var(--accent); }
+    nav { display:flex; gap:36px; align-items:center; font-size:13px; font-weight:700; }
+    nav a { transition:color .2s; }
+    nav a:hover, .text-link:hover { color:var(--accent); }
+    nav .contact-nav { border:1px solid var(--ink); padding:9px 17px; border-radius:99px; }
+    nav .contact-nav:hover { background:var(--ink); color:var(--white); }
+    .hero { display:grid; grid-template-columns:1.12fr .88fr; gap:52px; align-items:center; min-height:628px; padding-top:66px; padding-bottom:94px; }
+    .eyebrow { display:flex; gap:11px; align-items:center; text-transform:uppercase; font-size:12px; font-weight:800; letter-spacing:.16em; color:var(--accent); }
+    .eyebrow:before { content:""; display:inline-block; width:27px; height:1px; background:currentColor; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { font-family:"Manrope",sans-serif; }
+    h1 { font-size:clamp(64px,7.8vw,108px); letter-spacing:-.083em; line-height:1.06; margin:27px 0 28px; }
+    h1 em { font-style:normal; color:var(--accent); }
+    .lead { max-width:580px; font-size:clamp(19px,2vw,23px); line-height:1.54; letter-spacing:-.018em; margin-bottom:24px; }
+    .intro { max-width:550px; color:var(--muted); font-size:16px; }
+    .actions { display:flex; align-items:center; flex-wrap:wrap; gap:27px; margin-top:35px; }
+    .button { display:inline-flex; align-items:center; gap:19px; background:var(--ink); color:var(--white); border:1px solid var(--ink); border-radius:99px; padding:13px 22px; font-size:13px; font-weight:700; transition:transform .2s,background .2s; }
+    .button:hover { transform:translateY(-2px); background:#274d48; }
+    .text-link { font-size:13px; font-weight:800; border-bottom:1px solid var(--ink); padding-bottom:3px; transition:color .2s; }
+    .arrow { font-size:19px; font-weight:400; line-height:0; }
+    .feature { align-self:stretch; min-height:486px; background:var(--ink); border-radius:6px 92px 6px 6px; position:relative; overflow:hidden; color:var(--white); display:flex; flex-direction:column; justify-content:space-between; padding:34px; box-shadow:18px 20px 0 var(--mint); }
+    .feature:before { content:""; position:absolute; width:360px; height:360px; border:1px solid rgba(255,255,255,.18); border-radius:50%; right:-110px; top:52px; }
+    .feature:after { content:""; position:absolute; width:235px; height:235px; border:1px solid rgba(255,255,255,.16); border-radius:50%; right:-49px; top:112px; }
+    .feature-top { display:flex; justify-content:space-between; align-items:center; font-size:11px; letter-spacing:.17em; font-weight:800; text-transform:uppercase; color:#d1dfd9; position:relative; z-index:1; }
+    .feature-top .spark { font-size:27px; color:#e4ad83; line-height:1; }
+    .monogram { position:relative; z-index:1; font:800 clamp(130px,18vw,224px)/.9 "Manrope",sans-serif; letter-spacing:-.13em; margin-left:-13px; color:#e3eae0; }
+    .feature-bottom { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:end; gap:16px; border-top:1px solid rgba(255,255,255,.28); padding-top:22px; }
+    .feature-bottom span { text-transform:uppercase; letter-spacing:.13em; font-size:11px; font-weight:800; }
+    .feature-bottom strong { font:500 14px/1.4 "DM Sans",sans-serif; text-align:right; color:#d1dfd9; }
+    section.band { border-top:1px solid var(--line); padding:88px 0 98px; }
+    .section-head { display:grid; grid-template-columns:225px 1fr; gap:36px; }
+    .section-num { font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.16em; text-transform:uppercase; padding-top:13px; }
+    h2 { font-size:clamp(35px,4vw,52px); line-height:1.18; letter-spacing:-.055em; margin:0 0 30px; }
+    .section-copy { max-width:750px; font-size:18px; line-height:1.75; color:var(--muted); }
+    .section-copy strong { color:var(--ink); font-weight:700; }
+    .skills { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
+    .skills span { border:1px solid #cbd4c9; padding:7px 13px; border-radius:99px; font-size:12px; font-weight:700; color:#35544d; background:#edf1e9; }
+    .work { background:#ecefe8; }
+    .work-grid { display:grid; grid-template-columns:225px 1fr; gap:36px; }
+    .entries { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .entry { background:var(--white); padding:28px; min-height:250px; border:1px solid #dde2d9; display:flex; flex-direction:column; }
+    .entry:first-child { grid-column:span 2; min-height:220px; background:var(--ink); color:var(--white); border-color:var(--ink); }
+    .entry-label { text-transform:uppercase; letter-spacing:.15em; font-size:11px; font-weight:800; color:var(--accent); margin-bottom:24px; }
+    .entry:first-child .entry-label { color:#e7a88c; }
+    .entry h3 { font-size:24px; letter-spacing:-.05em; line-height:1.2; margin:0 0 10px; }
+    .entry p { font-size:14px; line-height:1.65; color:var(--muted); margin:0; max-width:660px; }
+    .entry:first-child p { color:#d0dfd8; }
+    .entry .meta { margin-top:auto; padding-top:22px; font-size:12px; color:#7a8981; font-weight:700; }
+    .entry:first-child .meta { color:#c7d9ce; }
+    .contact { display:grid; grid-template-columns:225px 1fr; gap:36px; }
+    .contact p { max-width:650px; color:var(--muted); font-size:18px; }
+    .contact-links { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .contact-links a { display:inline-flex; align-items:center; gap:18px; border:1px solid var(--ink); border-radius:99px; padding:10px 18px; font-size:13px; font-weight:800; transition:background .2s,color .2s; }
+    .contact-links a:hover { background:var(--ink); color:var(--white); }
+    footer { border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; padding-top:25px!important; padding-bottom:35px!important; font-size:12px; font-weight:700; color:#70817a; }
+    @media(max-width:850px) { .wrap{padding:0 28px} .hero{grid-template-columns:1fr;gap:46px;padding-top:68px;min-height:auto} .feature{min-height:355px} .monogram{font-size:180px} .section-head,.work-grid,.contact{grid-template-columns:1fr;gap:18px} .section-num{padding-top:0} }
+    @media(max-width:560px) { .wrap{padding:0 22px} .topbar{height:72px} nav{gap:16px;font-size:12px} nav a:first-child{display:none} nav .contact-nav{padding:7px 12px} .hero{padding-top:56px;padding-bottom:74px} h1{font-size:clamp(62px,18vw,85px);margin:22px 0} .lead{font-size:19px} .feature{min-height:330px;padding:24px;border-top-right-radius:68px;box-shadow:10px 12px 0 var(--mint)} .monogram{font-size:150px} section.band{padding:70px 0 75px} .entries{grid-template-columns:1fr} .entry:first-child{grid-column:auto} .entry{min-height:220px} .section-copy,.contact p{font-size:16px} footer{flex-direction:column;gap:2px} }
+    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *,*:before,*:after{transition:none!important} }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="wordmark" href="#top" aria-label="Yushu Fan, back to top">Yushu Fan<span>.</span></a>
+    <nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Experience</a><a class="contact-nav" href="#contact">Get in touch</a></nav>
+  </header>
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Data science · University of Chicago</div>
+        <h1>Hi, I'm<br><em>Yushu</em> Fan.</h1>
+        <p class="lead">I turn complex data into clear decisions through experimentation, modeling, and thoughtful data products.</p>
+        <p class="intro">I'm studying Data Science and Mathematics at the University of Chicago. My work spans product experiments, education analytics, and research, with a focus on making evidence useful to the people who need it.</p>
+        <div class="actions"><a class="button" href="#work">Explore my work <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="mailto:yushuf@uchicago.edu">Say hello ↗</a></div>
+      </div>
+      <div class="feature" aria-label="Yushu Fan, data science and mathematics">
+        <div class="feature-top"><span>Curiosity into clarity</span><span class="spark" aria-hidden="true">✳</span></div>
+        <div class="monogram" aria-hidden="true">YF.</div>
+        <div class="feature-bottom"><span>Chicago, IL</span><strong>Data Science<br>& Mathematics</strong></div>
+      </div>
+    </div>
+    <section class="band" id="about" aria-labelledby="about-title"><div class="wrap section-head"><div class="section-num">01 / About</div><div><h2 id="about-title">From messy data to<br>meaningful answers.</h2><div class="section-copy">I enjoy working where rigorous analysis meets real decisions. At <strong>Tencent</strong>, I evaluated live product experiments and built a framework for launch decisions. At <strong>KindEd</strong>, I helped turn student questionnaires into reports schools can use. Earlier research took me from food distribution data to large collections of human rights documents.</div><div class="skills" aria-label="Areas and tools"><span>Experimentation</span><span>Machine learning</span><span>Causal inference</span><span>Python</span><span>R & SQL</span><span>Data storytelling</span></div></div></div></section>
+    <section class="band work" id="work" aria-labelledby="work-title"><div class="wrap work-grid"><div class="section-num">02 / Selected experience</div><div><h2 id="work-title">Work with impact.</h2><div class="entries">
+      <article class="entry"><div class="entry-label">Product experimentation · Tencent</div><h3>Making better launch decisions</h3><p>Evaluated 40 live A/B tests across 18M+ cumulative user assignments, informing launch and stop decisions. Designed an eight-stage framework to help an AI agent assess data quality, statistical evidence, and product guardrails.</p><div class="meta">Data Science Intern · Summer 2026</div></article>
+      <article class="entry"><div class="entry-label">Education analytics · KindEd</div><h3>Insights schools can use</h3><p>Built an automated reporting pipeline that turns student AI-literacy questionnaires into ranked insights, visualizations, and school-facing PDFs.</p><div class="meta">Data Science Intern · 2026</div></article>
+      <article class="entry"><div class="entry-label">Research · Emory University</div><h3>Finding signal at scale</h3><p>Built NLP workflows for 10K+ human rights documents and analyzed 600K+ food-order records alongside disaster data for a community-focused research project.</p><div class="meta">Research Assistant & Researcher · 2024–2025</div></article>
+    </div></div></div></section>
+    <section class="band" id="contact" aria-labelledby="contact-title"><div class="wrap contact"><div class="section-num">03 / Contact</div><div><h2 id="contact-title">Let's connect.</h2><p>I'd love to hear about data science work, interesting questions, or ideas worth exploring together.</p><div class="contact-links"><a href="mailto:yushuf@uchicago.edu">Email me <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/yushu-fan/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div></div></section>
+  </main>
+  <footer class="wrap"><span>© <span id="year">2026</span> Yushu Fan</span><span>Built with care in Chicago.</span></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
