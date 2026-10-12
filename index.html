@@ -64,7 +64,7 @@
     .project { display: grid; grid-template-columns: 1fr; gap: 24px; }
     .project-copy { max-width: 760px; }
     .project h3 { margin: 0 0 10px; font-size: clamp(22px, 3vw, 28px); line-height: 1.3; letter-spacing: -.04em; font-weight: 650; }
-    .project-copy p { margin-bottom: 15px; max-width: 760px; color: var(--muted); font-size: 14px; }
+    .project-copy p { margin-bottom: 15px; max-width: 760px; color: var(--muted); font-size: 14px; }\n    .project-copy .project-context { color: var(--soft); font-size: 12px; }
     .metrics { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 20px; color: #374151; font-size: 12px; font-weight: 650; }
     .metrics span { white-space: nowrap; }
     .project-links { display: flex; flex-wrap: wrap; gap: 18px; color: var(--accent); font-size: 13px; font-weight: 650; }
@@ -121,39 +121,11 @@
       <p class="kicker">Data science · Analytics · Decision science</p>
       <h1 id="name">Yushu Fan</h1>
       <p class="role">Data Science & Mathematics student at the University of Chicago</p>
-      <p class="intro">I study Data Science, Statistics, and Mathematics. My recent work includes evaluating product experiments at Tencent, building education analytics tools at KindEd, and researching food distribution with Emory AI.Data Lab and TechBridge.</p>
+      <p class="intro">I build analytical tools and research workflows for decisions. My work spans human-rights text analysis at Emory, product experiments at Tencent, and education analytics at KindEd.</p>
       <div class="links" id="contact">
         <a href="mailto:yushuf@uchicago.edu">Email</a>
         <a href="https://www.linkedin.com/in/yushu-fan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/YushuFan">GitHub</a>
-      </div>
-    </section>
-
-    <section class="wrap section" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading">
-        <h2 class="section-label" id="projects-title">Selected project</h2>
-        <p class="section-note">Python · SQL · Applied research</p>
-      </div>
-      <div class="project">
-        <div class="project-copy">
-          <h3>Food-bank order activity during disasters</h3>
-          <p>I rebuilt a collaborative research analysis in Python and SQL, auditing 84,399 order headers and 606,316 order lines. In a calendar-adjusted comparison of acute-disaster-overlap weeks with other observed weeks, the estimated difference was −2.9% (95% CI: −13.0% to +8.4%). The original study reported an association between disaster severity and transaction volume (p = .006); it used a different exposure definition, so the two estimates are not a like-for-like replication.</p>
-          <div class="metrics" aria-label="Project data">
-            <span>55,201 qualifying orders</span>
-            <span>520 observed weeks</span>
-            <span>6 model specifications</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/YushuFan/food-bank-disaster-analysis">Project repository ↗</a>
-            <a href="https://github.com/YushuFan/food-bank-disaster-analysis/blob/main/reports/FINDINGS.md">Findings ↗</a>
-          </div>
-        </div>
-        <figure class="figure">
-          <a href="https://github.com/YushuFan/food-bank-disaster-analysis">
-            <img src="https://raw.githubusercontent.com/YushuFan/food-bank-disaster-analysis/main/reports/figures/sensitivity.png" alt="Sensitivity estimates and uncertainty intervals for six model specifications">
-          </a>
-          <figcaption>Estimated association across six specifications; intervals include zero.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -202,6 +174,34 @@
             <p>Analyzed 600K+ food-order records with NOAA weather and disaster data to study distribution patterns across Georgia. The original collaborative R analysis, which I authored, reported an association between disaster severity and food-bank-to-pantry transaction volume (p = .006).</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <h2 class="section-label" id="projects-title">Selected project</h2>
+        <p class="section-note">Python · SQL · Applied research</p>
+      </div>
+      <div class="project">
+        <div class="project-copy">
+          <h3>Do disasters bring a surge in food-bank orders?</h3>
+          <p>I revisited a collaborative Emory/TechBridge study to test whether food-bank orders rise during disaster periods. In this Python + SQL reanalysis, the calendar-adjusted estimate shows no clear average surge—an important caution against one-size-fits-all planning.</p><p class="project-context">The original Emory R analysis reported a severity association (p = .006); this update uses a different disaster definition and is not a direct replication.</p>
+          <div class="metrics" aria-label="Project data">
+            <span>−2.9% estimated difference</span>
+            <span>95% CI: −13.0% to +8.4%</span>
+            <span>55,201 orders · 520 weeks</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/YushuFan/food-bank-disaster-analysis">Project repository ↗</a>
+            <a href="https://github.com/YushuFan/food-bank-disaster-analysis/blob/main/reports/FINDINGS.md">Findings ↗</a>
+          </div>
+        </div>
+        <figure class="figure">
+          <a href="https://github.com/YushuFan/food-bank-disaster-analysis">
+            <img src="https://raw.githubusercontent.com/YushuFan/food-bank-disaster-analysis/main/reports/figures/sensitivity.png" alt="Sensitivity estimates and uncertainty intervals for six model specifications">
+          </a>
+          <figcaption>Estimated association across six specifications; intervals include zero.</figcaption>
+        </figure>
       </div>
     </section>
 
