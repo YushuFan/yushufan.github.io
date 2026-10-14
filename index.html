@@ -64,7 +64,8 @@
     .project { display: grid; grid-template-columns: 1fr; gap: 24px; }
     .project-copy { max-width: 760px; }
     .project h3 { margin: 0 0 10px; font-size: clamp(22px, 3vw, 28px); line-height: 1.3; letter-spacing: -.04em; font-weight: 650; }
-    .project-copy p { margin-bottom: 15px; max-width: 760px; color: var(--muted); font-size: 14px; }\n    .project-copy .project-context { color: var(--soft); font-size: 12px; }
+    .project-copy p { margin-bottom: 15px; max-width: 760px; color: var(--muted); font-size: 14px; }
+    .project-copy .project-context { color: var(--soft); font-size: 12px; }
     .metrics { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 20px; color: #374151; font-size: 12px; font-weight: 650; }
     .metrics span { white-space: nowrap; }
     .project-links { display: flex; flex-wrap: wrap; gap: 18px; color: var(--accent); font-size: 13px; font-weight: 650; }
@@ -93,7 +94,7 @@
       .wrap { width: min(var(--content), calc(100% - 36px)); }
       .topbar { min-height: 66px; gap: 14px; }
       nav { gap: 15px; font-size: 12px; }
-      nav a:first-child { display: none; }
+      nav { flex-wrap: wrap; gap: 10px; }
       .hero { padding: 60px 0 52px; }
       .intro { font-size: 15px; }
       .section { padding: 40px 0 44px; }
@@ -104,6 +105,10 @@
       footer { flex-direction: column; gap: 4px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    .example { margin:20px 0; padding:20px; background:var(--wash); border-left:3px solid var(--accent); }
+    .example code { font-size:16px; }
+    .example p:last-child { margin-bottom:0; }
+    .figure { margin-top:0; max-width:900px; }
   </style>
 </head>
 <body>
@@ -118,15 +123,38 @@
   </header>
   <main id="top">
     <section class="wrap hero" aria-labelledby="name">
-      <p class="kicker">Data science · Analytics · Decision science</p>
+      <p class="kicker">University of Chicago · Class of 2028</p>
       <h1 id="name">Yushu Fan</h1>
-      <p class="role">Data Science & Mathematics student at the University of Chicago</p>
-      <p class="intro">I build analytical tools and research workflows for decisions. My work spans human-rights text analysis at Emory, product experiments at Tencent, and education analytics at KindEd.</p>
+      <p class="role">Studying data science, statistics, and mathematics</p>
+      <p class="intro">I've evaluated A/B tests at Tencent, automated school survey reports at KindEd, and worked on human-rights and food-distribution research at Emory. I'm interested in data science and analytics internships.</p>
       <div class="links" id="contact">
+        <a href="resume.html">Resume</a>
         <a href="mailto:yushuf@uchicago.edu">Email</a>
         <a href="https://www.linkedin.com/in/yushu-fan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/YushuFan">GitHub</a>
       </div>
+    </section>
+
+    <section class="wrap section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><h2 class="section-label" id="projects-title">Selected projects</h2></div>
+      <article class="project">
+        <div class="project-copy">
+          <p class="project-context">Python · SQL · Statistical analysis</p>
+          <h3>Food Bank Orders During Disasters</h3>
+          <p>I analyzed 606,316 order lines to compare weekly food-bank activity during disaster and non-disaster periods. After adjusting for calendar patterns, the comparison did not provide clear evidence of an increase in orders.</p>
+          <div class="project-links"><a href="projects/food-bank/">View analysis ↗</a><a href="https://github.com/YushuFan/food-bank-disaster-analysis">Code ↗</a><a href="https://github.com/YushuFan/YushuFan/tree/main/projects/ai-data-lab">Original R study ↗</a></div>
+        </div>
+        <figure class="figure"><img src="assets/weekly-orders.png" alt="Weekly qualifying food-bank orders over the study period" loading="lazy"><figcaption>Recorded order activity, 2014–2023. Orders do not measure completed deliveries or unmet need.</figcaption></figure>
+      </article>
+      <article class="project" style="margin-top:48px">
+        <div class="project-copy">
+          <p class="project-context">R · Python · Text processing</p>
+          <h3>Country Labeling for Human Rights Reports</h3>
+          <p>At Emory, I built country-labeling rules for 10K+ documents and standardized 100K+ report sections for human-rights research. The scripts address ambiguous names, overlapping country names, and documents mentioning multiple countries.</p>
+          <div class="example"><strong>A naming problem</strong><p>“Nigeria” contains “Niger.” A simple substring search can assign the wrong country.</p><code>Niger(?!ia)</code><p>The archived R rule excludes that match. This is an illustrative example, not an accuracy evaluation.</p></div>
+          <div class="project-links"><a href="https://github.com/YushuFan/YushuFan/tree/main/projects/emory-human-rights">Read project ↗</a><a href="https://github.com/YushuFan/YushuFan/blob/main/projects/emory-human-rights/EXAMPLE.md">View example ↗</a></div>
+        </div>
+      </article>
     </section>
 
     <section class="wrap section" id="experience" aria-labelledby="experience-title">
@@ -147,7 +175,7 @@
           <div>
             <h3>Data Science Intern</h3>
             <p class="job-org">KindEd</p>
-            <p>Launched automated survey-to-reporting for school administrators. Built a source-audited Python research workflow to identify decision-makers across 400+ Wisconsin districts, expanding contact coverage more than 4×, and evaluated 30+ visualization formats for communicating education findings.</p>
+            <p>Automated school survey reports and built a Python pipeline to identify decision-makers across 400+ Wisconsin school districts, expanding contact coverage more than 4×.</p>
           </div>
         </article>
         <article class="job">
@@ -155,7 +183,7 @@
           <div>
             <h3>Data Science Intern</h3>
             <p class="job-org">Tencent</p>
-            <p>Evaluated 40 live A/B tests across 18M+ cumulative user assignments, guiding 10 launches and 5 stop decisions. Shipped changes improved retention by 1.0%–1.8% and advertising revenue per user by 4.7%–5.8%. Built an eight-stage framework for launch, hold, and rollback recommendations with statistical, guardrail, and data-quality checks.</p>
+            <p>Evaluated 40 live A/B tests across 18M+ cumulative user assignments, informing 10 launch and 5 stop decisions. Built statistical, guardrail, and data-quality checks into an experiment decision framework.</p>
           </div>
         </article>
         <article class="job">
@@ -171,43 +199,9 @@
           <div>
             <h3>Researcher</h3>
             <p class="job-org">Emory AI.Data Lab · TechBridge · Feeding America</p>
-            <p>Analyzed 600K+ food-order records with NOAA weather and disaster data to study distribution patterns across Georgia. The original collaborative R analysis, which I authored, reported an association between disaster severity and food-bank-to-pantry transaction volume (p = .006).</p>
+            <p>Analyzed food-bank transactions and donor offers alongside weather and disaster data. Authored R analyses and co-led the presentation, which received the Best Presentation & Poster Award among 20 teams.</p>
           </div>
         </article>
-      </div>
-    </section>
-
-    <section class="wrap section" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading">
-        <h2 class="section-label" id="projects-title">Selected projects</h2>
-        <p class="section-note">Applied research · Analytics · Decision support</p>
-      </div>
-      <div class="project">
-        <div class="project-copy">
-          <h3>Human-rights text data at Emory</h3>
-          <p>Built rule-based country-labeling and NLP workflows for a research project on U.S. human-rights rhetoric. The work helped prepare 10K+ documents and 100K+ report sections for analysis.</p>
-          <p class="project-context">The public archive contains selected original scripts; the underlying reports and research datasets are not included.</p>
-          <div class="project-links"><a href="https://github.com/YushuFan/YushuFan/tree/main/projects/emory-human-rights">Project archive ↗</a></div>
-        </div>
-      </div>
-      <div class="project" style="margin-top:36px">
-        <div class="project-copy">
-          <h3>Food distribution and disaster exposure</h3>
-          <p>In Emory AI.Data Lab, I analyzed food-bank transactions and donor offers alongside weather and disaster measures. The original collaborative study reported an association between disaster severity and food-bank-to-pantry transaction volume (p = .006).</p>
-          <p class="project-context">The original R analyses are preserved as written. A later Python + SQL reanalysis uses a different exposure definition and is not a direct replication.</p>
-          <div class="project-links">
-            <a href="https://github.com/YushuFan/YushuFan/tree/main/projects/ai-data-lab">Original project files ↗</a>
-            <a href="https://github.com/YushuFan/food-bank-disaster-analysis">Python + SQL reanalysis ↗</a>
-          </div>
-        </div>
-      </div>
-      <div class="project" style="margin-top:36px">
-        <div class="project-copy">
-          <h3>Rechecking the disaster comparison with Python + SQL</h3>
-          <p>I rebuilt one part of the earlier food-bank analysis as a reproducible Python and SQL workflow, auditing order records before comparing activity across disaster-overlap and other observed weeks.</p>
-          <p class="project-context">The estimate is uncertain and does not establish a causal effect. The original team analysis used a different exposure definition.</p>
-          <div class="project-links"><a href="https://github.com/YushuFan/food-bank-disaster-analysis">Analysis and findings ↗</a></div>
-        </div>
       </div>
     </section>
 
@@ -218,14 +212,14 @@
       <div class="education-row">
         <div>
           <h3>University of Chicago</h3>
-          <p>B.S. in Data Science, Statistics, and Mathematics · GPA 4.00 · Dean’s List</p>
+          <p>B.A. in Data Science · B.A. in Statistics · B.S. in Mathematics · GPA 4.00 · Dean’s List</p>
         </div>
         <div class="education-date">Expected June 2028 · Chicago, Illinois</div>
       </div>
       <div class="education-row" style="margin-top:22px">
         <div>
           <h3>Emory University <span style="font-weight:400;color:var(--muted)">(transferred)</span></h3>
-          <p>B.S. in Applied Mathematics and Statistics · GPA 4.00 · Dean’s List · Phi Eta Sigma</p>
+          <p>Coursework toward B.S. in Applied Mathematics and Statistics · GPA 4.00 · Dean’s List · Phi Eta Sigma</p>
         </div>
         <div class="education-date">Aug 2024 — May 2025 · Atlanta, Georgia</div>
       </div>
